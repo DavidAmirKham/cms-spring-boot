@@ -23,12 +23,6 @@ public class NewsController {
     @Autowired
     private NewsRepository newsRepository;
 
-    @RequestMapping(value="login", method = RequestMethod.POST)
-    public String login(HttpEntity<String> httpEntity) throws Exception {
-        String jsonStr = httpEntity.getBody();
-        return jsonStr;    
-    }
-
     @RequestMapping(value="getLast10")
     public List<News> getLast10() throws Exception {
         return newsRepository.findTop10ById();
